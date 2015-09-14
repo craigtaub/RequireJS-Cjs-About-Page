@@ -1,3 +1,13 @@
-# ReactJS with CommonJS example
+# ReactJS CJS about page
 
-A simple example that accompanies http://simonsmith.io/writing-react-components-as-commonjs-modules/
+Setup
+
+    npm install
+
+Test the app
+
+    npm test
+
+Build the app
+
+    grunt browserify

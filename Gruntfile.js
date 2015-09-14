@@ -2,26 +2,41 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        watch: {
-            react: {
-                files: 'react_components/*.jsx',
-                tasks: ['browserify']
-            }
-        },
+        // TODO: fix
+        // watch: {
+        //     react: {
+        //         files: 'components/*.jsx',
+        //         tasks: ['browserify']
+        //     }
+        // },
 
         browserify: {
-            options: {
-                transform: [ require('grunt-react').browserify ]
-            },
-            client: {
-                src: ['react_components/**/*.jsx'],
-                dest: 'scripts/app.built.js'
-            }
+          build: {
+                  options: {
+                    debug: false,
+                    transform: ['reactify']
+                  },
+                  files: {
+                    'scripts/app.min.js': 'components/App.jsx'
+                  }
+                }
         }
+
+        // TODO: use compiler.js
+        // mocha: {
+        //   test: {
+        //     options: {
+        //         require: 'tests/utils/compiler.js'
+        //     },
+        //     src: ['tests/*.test.js'],
+        //   },
+        // }
+
     });
 
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-mocha');
 
     grunt.registerTask('default', [
         'browserify'
