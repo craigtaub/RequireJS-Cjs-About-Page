@@ -9,4 +9,5 @@ React.render(
         about="React component BIO text"
         image="https://upload.wikimedia.org/wikipedia/commons/3/33/Vanamo_Logo.png"
     />,
-    document.body);
+    document.getElementById('client-content')
+);

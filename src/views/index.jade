@@ -1,5 +1,7 @@
 html
-  head    
+  head
     title!= title
   body
+    div(id="client-content")
     script(src='js/app.min.js')
+    div(id="server-content")!= markup
