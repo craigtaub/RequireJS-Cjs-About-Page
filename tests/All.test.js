@@ -1,5 +1,5 @@
 var rewire = require('rewire'),
-    All = rewire('../components/All.jsx'),
+    All = rewire('../src/components/All.jsx'),
     React = require('react'),
     assert = require('assert'),
     reactAddons = require('react/addons'),

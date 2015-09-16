@@ -1,4 +1,4 @@
-var About = require('../components/About.jsx'),
+var About = require('../src/components/About.jsx'),
     React = require('react'),
     assert = require('assert'),
     reactAddons = require('react/addons'),
@@ -18,7 +18,7 @@ describe('About', function () {
         assert.equal(
           shallowRenderer.getRenderOutput().props.children.props.children,
           "test block"
-        )
+        );
         assert.equal(
           '<div class="About"><p class="About-text">test block</p></div>',
           markup
