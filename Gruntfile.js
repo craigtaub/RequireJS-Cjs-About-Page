@@ -9,14 +9,24 @@ module.exports = function(grunt) {
         },
         browserify: {
           build: {
-                  options: {
-                    debug: false,
-                    transform: ['reactify']
-                  },
-                  files: {
-                    'scripts/app.min.js': 'components/App.jsx'
-                  }
-                }
+              options: {
+                debug: false,
+                transform: [
+                    'reactify', // transform reactJS
+                    'babelify' // transform es6 to es5
+                ]
+              },
+              files: {
+                'scripts/app.js': 'components/App.jsx'
+              }
+            }
+        },
+        uglify: {
+          my_target: {
+            files: {
+              'scripts/app.min.js': ['scripts/app.js']
+            }
+          }
         },
         mochaTest: {
           test: {
@@ -31,11 +41,11 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-browserify'); // all into 1 file
+    grunt.loadNpmTasks('grunt-contrib-uglify'); // minification
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-mocha-test');
 
-    grunt.registerTask('default', [
-        'browserify'
-    ]);
+    grunt.registerTask('default', ['browserify', 'uglify']);
+    grunt.registerTask('test', ['mochaTest']);
 };

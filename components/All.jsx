@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var React  = require('react');
 var Image = require('./Image.jsx');
 var About    = require('./About.jsx');

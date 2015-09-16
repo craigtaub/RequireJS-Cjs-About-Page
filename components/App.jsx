@@ -1,6 +1,7 @@
-/** @jsx React.DOM */
 var React   = require('react');
 var All = require('./All.jsx');
+
+var testBabel = () => {'use strict'; return ' some ES6 function'};
 
 React.render(
     <All
