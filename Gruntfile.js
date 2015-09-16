@@ -3,7 +3,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         watch: {
             react: {
-                files: 'components/*.jsx',
+                files: 'src/components/*.jsx',
                 tasks: ['browserify']
             }
         },
@@ -17,14 +17,14 @@ module.exports = function(grunt) {
                 ]
               },
               files: {
-                'scripts/app.js': 'components/App.jsx'
+                'src/public/js/app.js': 'src/components/App.jsx'
               }
             }
         },
         uglify: {
           my_target: {
             files: {
-              'scripts/app.min.js': ['scripts/app.js']
+              'src/public/js/app.min.js': ['src/public/js/app.js']
             }
           }
         },

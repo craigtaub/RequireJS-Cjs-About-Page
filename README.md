@@ -14,6 +14,10 @@ Test the app
 
     grunt test
 
+Run the app
+
+    npm start
+  
 TODO
 - integrate express.js + use /components isomorphically
 - integrate Flux
