@@ -10,7 +10,7 @@ module.exports = function(app){
         var all = componentAll({
                 name: "Taub C",
                 about: "SERVER component BIO text",
-                image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Vanamo_Logo.png"
+                image: "img/main.png"
             }),
             markup = React.renderToString(all); // <All> errors
 

@@ -1,6 +1,7 @@
 var React  = require('react');
 var Image = require('./Image.jsx');
-var About    = require('./About.jsx');
+var About = require('./About.jsx');
+var Button = require('./Button.jsx');
 
 module.exports = React.createClass({
     render: function() {
@@ -10,6 +11,7 @@ module.exports = React.createClass({
                 <div className="All-body">
                     <Image imgSrc={this.props.image} />
                     <About text={this.props.about} />
+                    <Button />
                 </div>
             </div>
         )
