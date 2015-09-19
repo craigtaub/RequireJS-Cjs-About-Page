@@ -17,6 +17,7 @@ describe('All', function () {
           });
           All.__set__("Image", mockItem);
           All.__set__("About", mockItem);
+          All.__set__("Button", mockItem);
 
           // creates real element in Shadow Rendering
           var shallowRenderer = TestUtils.createRenderer(),
@@ -26,7 +27,7 @@ describe('All', function () {
           markup = React.renderToStaticMarkup(shallowRenderer.getRenderOutput());
 
           assert.equal(
-            '<div class="All"><h2 class="All-title">my username</h2><div class="All-body"><div class="mock"></div><div class="mock"></div></div></div>',
+            '<div class="All"><h2 class="All-title">my username</h2><div class="All-body"><div class="mock"></div><div class="mock"></div><div class="mock"></div></div></div>',
             markup
           );
           assert.equal(
